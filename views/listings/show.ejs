@@ -1,0 +1,35 @@
+<% layout("./layouts/boilerplate.ejs") %>
+
+<div class="container mt-4 mb-4">
+  
+<div class="row justify-content-center"> 
+  <div class="col-md-8">
+
+<h4 class="text-center mb-4">Listing Details</h4>
+
+<div class="card mx-auto w-75">
+  <img src="<%= listing.image %>" class="card-img-top show-img" alt="Listing Image" />
+  <div class="card-body">
+    <b><%= listing.title %></b>
+    <p class="card-text">
+      <%= listing.description %>  <br>
+      <%= listing.price.toLocaleString( "en-IN", {
+      maximumFractionDigits: 0, style: "currency", currency: "INR", } ); %>  <br>
+      <%= listing.location %> <%= listing.country %>
+    </p>
+    <div class="d-flex">
+      <a href="/listing/<%= listing._id %>/edit"
+        ><button class="btn btn-dark me-4">Edit</button></a
+      >
+
+      <form action="/listing/<%= listing._id %>?_method=DELETE" method="post">
+        <button class="delete-btn btn btn-dark" type="submit">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+

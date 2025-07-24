@@ -1,0 +1,65 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="container mt-4">
+    <h4 class="text-center mb-4">Create a new Listing</h4>
+
+    <div class="row justify-content-center">
+
+    <div class="col-md-6 col-sm-8">
+    <form action="/listing" method="post" class="needs-validation" novalidate>
+
+        <div class="mb-3">
+        <label class="form-label" for="title">Title :</label>
+        <input id="title" class="form-control" name="listing[title]" type="text" required> 
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+
+        <div class="mb-3">
+        <label class="form-label" for="description">Description :</label>
+        <textarea id="description" class="form-control" name="listing[description]" required></textarea>
+        <div class="invalid-feedback">
+            Please enter a short description
+        </div>
+    </div>
+        
+        <div class="mb-3">
+            <label class="form-label" for="image">Image :</label>
+            <input id="image" class="form-control" name="listing[image]" type="text"> 
+         </div>
+
+         <div class="row">
+
+        <div class="mb-3 col-md-4" >
+            <label class="form-label" for="price">Price :</label>
+            <input id="price" class="form-control" name="listing[price]" type="text" required> 
+            <div class="invalid-feedback">
+                Please enter a valid price
+            </div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+            <label class="form-label" for="country">Country :</label>
+            <input id="country" class="form-control" name="listing[country]" type="text" required> 
+            <div class="invalid-feedback">
+                Please enter country name
+            </div>
+        </div>
+
+        </div>
+
+         <div class="mb-3">
+            <label class="form-label" for="location">Location :</label>
+            <input id="location" class="form-control" name="listing[location]" type="text" required> 
+            <div class="invalid-feedback">
+                Please enter accurate Location
+            </div>
+        </div>
+
+        <button class="add-btn btn btn-dark mb-4" type="submit">Add</button>
+    </form>
+</div>
+</div>
+
+</div>
