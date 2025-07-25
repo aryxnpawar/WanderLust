@@ -5,12 +5,11 @@
 <div class="row justify-content-center"> 
   <div class="col-md-8">
 
-<h4 class="text-center mb-4">Listing Details</h4>
+<h4 class="text-center mb-4"><%= listing.title %></h4>
 
 <div class="card mx-auto w-75">
   <img src="<%= listing.image %>" class="card-img-top show-img" alt="Listing Image" />
   <div class="card-body">
-    <b><%= listing.title %></b>
     <p class="card-text">
       <%= listing.description %>  <br>
       <%= listing.price.toLocaleString( "en-IN", {

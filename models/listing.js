@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { type } = require("../schema");
 const Schema = mongoose.Schema;
 
 const listingSchema = new Schema({
@@ -23,6 +24,12 @@ const listingSchema = new Schema({
   country: {
     type: String,
   },
+  review:[
+    {
+      type:Schema.Types.ObjectId,
+      ref:'Review'
+    }
+  ]
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
