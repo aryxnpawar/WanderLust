@@ -19,12 +19,12 @@
             <%= listing.location %> <%= listing.country %>
           </p>
           <div class="d-flex">
-            <a href="/listing/<%= listing._id %>/edit"
+            <a href="/listings/<%= listing._id %>/edit"
               ><button class="btn btn-dark me-4">Edit</button></a
             >
 
             <form
-              action="/listing/<%= listing._id %>?_method=DELETE"
+              action="/listings/<%= listing._id %>?_method=DELETE"
               method="post"
             >
               <button class="delete-btn btn btn-dark" type="submit">
@@ -44,7 +44,7 @@
 
       <form
         class="needs-validation"
-        action="/listing/<%= listing._id %>/reviews"
+        action="/listings/<%= listing._id %>/reviews"
         method="post"
         novalidate
       >
@@ -93,7 +93,7 @@
                 <h6 class="card-subtitle mb-2 text-body-secondary">Date</h6>
                 <p class="card-text"><%= review.comment %></p>
                 <p class="card-text"><%= review.rating %> Stars</p>
-                <form action="/listing/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="post">
+                <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="post">
                   <button class="btn btn-sm btn-dark" type="submit">Delete</button>
                 </form>
               </div>

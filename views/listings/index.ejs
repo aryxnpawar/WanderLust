@@ -5,7 +5,7 @@
   <ul class="row list-unstyled">
     <% for (const listItem of allListings) { %>
     <li class="col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
-      <a class="listing-link" href="/listing/<%= listItem._id %>">
+      <a class="listing-link" href="/listings/<%= listItem._id %>">
         <div class="card listing-card">
           <img
             src="<%= listItem.image %>"
