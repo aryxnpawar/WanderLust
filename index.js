@@ -80,7 +80,6 @@ app.post(
   "/listing",
   validateListing,
   wrapAsync(async (req, res) => {
-    console.log(result);
     const newListing = await Listing.insertOne(req.body.listing);
     console.log(newListing);
     res.redirect("/listing");
