@@ -26,6 +26,7 @@ router.post(
       let listing = await Listing.findById(id);
       listing.reviews.push(newReview);
       let result = await listing.save();
+      req.flash('success','New Review Added!')
       res.redirect(`/listings/${id}`);
     })
   );
@@ -37,7 +38,7 @@ router.post(
       const {id,reviewId} = req.params;
       await Listing.findByIdAndUpdate(id,{$pull:{reviews:reviewId}})
       await Review.findByIdAndDelete(reviewId);
-  
+      req.flash('success','Review Deleted!')
       res.redirect(`/listings/${id}`)
     })
   );

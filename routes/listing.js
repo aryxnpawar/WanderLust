@@ -69,6 +69,7 @@ const validateListing = (req, res, next) => {
         new: true,
       });
       console.log(updatedListing);
+      req.flash('success','Edit Listing Successfully!')
       res.redirect(`/listings/${id}`);
     })
   );
@@ -80,9 +81,10 @@ const validateListing = (req, res, next) => {
       const { id } = req.params;
       const deletedListing = await Listing.findByIdAndDelete(id);
       console.log(deletedListing);
+      req.flash('success','Deleted Listing successfully!')
       res.redirect("/listings");
     })
   );
   
 
-  module.exports = router
+  module.exports = router;
