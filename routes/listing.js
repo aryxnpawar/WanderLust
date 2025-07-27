@@ -46,7 +46,12 @@ const validateListing = (req, res, next) => {
     wrapAsync(async (req, res) => {
       const { id } = req.params;
       const listing = await Listing.findById(id).populate("reviews");
+      if(!listing){
+        req.flash('error','No such Listing!')
+        res.redirect("/listings");
+      }else{
       res.render("./listings/show.ejs", { listing });
+      }
     })
   );
   
@@ -56,7 +61,12 @@ const validateListing = (req, res, next) => {
     wrapAsync(async (req, res) => {
       const { id } = req.params;
       const listing = await Listing.findById(id);
+      if(!listing){
+        req.flash('error','No such Listing!')
+        res.redirect("/listings");
+      }else{
       res.render("./listings/edit.ejs", { listing });
+      }
     })
   );
   
