@@ -35,6 +35,7 @@ const validateListing = (req, res, next) => {
     wrapAsync(async (req, res) => {
       const newListing = await Listing.insertOne(req.body.listing);
       console.log(newListing);
+      req.flash('success','Added new Listing!')
       res.redirect("/listings");
     })
   );
