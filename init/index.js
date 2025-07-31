@@ -16,8 +16,9 @@ async function main() {
 }
 
 async function initialiseDb(){
-Listing.deleteMany({});
-Listing.insertMany(initData.data);
+await Listing.deleteMany({});
+initData.data = initData.data.map((obj)=>({...obj,owner:'6889b6cdfb2e01df351eeae7'}))   // owner:aryxnpawar
+await Listing.insertMany(initData.data);
 console.log("db initialised");
 }
 

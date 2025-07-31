@@ -13,6 +13,7 @@
         />
         <div class="card-body">
           <p class="card-text">
+            <i>Owned by <%= listing.owner.username %></i> <br>
             <%= listing.description %> <br />
             <%= listing.price.toLocaleString( "en-IN", { maximumFractionDigits:
             0, style: "currency", currency: "INR", } ); %> <br />
